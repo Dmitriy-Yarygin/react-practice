@@ -1,20 +1,17 @@
-import './scss/style.scss';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import "./scss/style.scss";
+import React from "react";
+import ReactDOM from "react-dom";
 
-import Home from './components/Home';
+import Home from "./components/Home";
 
 const renderApplication = () => {
-	ReactDOM.render(
-		<Home />,
-		document.querySelector('#root')
-	);
+  ReactDOM.render(<Home />, document.querySelector("#root"));
 };
 
 renderApplication();
 
 if (module.hot) {
-	module.hot.accept('./components/Home', () => {
-		renderApplication();
-	});
+  module.hot.accept("./components/Home", () => {
+    renderApplication();
+  });
 }

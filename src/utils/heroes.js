@@ -1,27 +1,11 @@
-import deadpoolImg from '../images/deadpool.jpg';
-import spidermanImg from '../images/spiderman.jpg';
-import thorImg from '../images/thor.jpg';
-import ironmanImg from '../images/ironman.jpg';
+import deadpoolImg from "../images/deadpool.jpg";
+import spidermanImg from "../images/spiderman.jpg";
+import thorImg from "../images/thor.jpg";
+import ironmanImg from "../images/ironman.jpg";
 
 export default [
-	{ 
-		hero:  'Iron Man',
-		avatar: ironmanImg,
-		name: 'Tony Stark'
-	},
-	{ 
-		hero:  'Deadpool',
-		avatar: deadpoolImg,
-		name: 'Wade Wilson'
-	},
-	{ 
-		hero:  'Spiderman',
-		avatar: spidermanImg,
-		name: 'Peter Parker'
-	},
-	{ 
-		hero:  'Thor',
-		avatar: thorImg,
-		name: ' - '
-	},
+  { id: "1", hero: "Iron Man", avatar: ironmanImg, name: "Tony Stark" },
+  { id: "2", hero: "Deadpool", avatar: deadpoolImg, name: "Wade Wilson" },
+  { id: "3", hero: "Spiderman", avatar: spidermanImg, name: "Peter Parker" },
+  { id: "4", hero: "Thor", avatar: thorImg, name: " - " }
 ];
