@@ -1,16 +1,20 @@
 import React from 'react';
+import List from './List';
+import HeroLi from './HeroLi';
 
-const formatName = user => `${user.firstName} ${user.lastName}`;
 
-const user = {
-	firstName: 'John',
-	lastName: 'Doe'
-};
+import arrayOfObjects from '../utils/heroes';
 
-const Home = () => (
-	<div>
-		<h1>Hello, {formatName(user)}!</h1>
-	</div>
-);
 
+
+class Home extends React.Component {
+
+	render() {
+		return (
+			<div>
+				<List	arrayOfObjects = {arrayOfObjects} elemChoice = 'ul' />
+			</div>
+		);
+	}
+}
 export default Home;
