@@ -1,22 +1,27 @@
 import React from "react";
 
 export default class Paragraf extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isTrimmed: true
-    };
-  }
+  state = {
+    isTrimmed: true
+  };
+
+  static defaultProps = {
+    maxTextLength: 33,
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum leo euismod gravida accumsan. Nulla accumsan velit sed euismod blandit. Aliquam gravida ante sed eros."
+  };
 
   render() {
     const maxTextLength = this.props.maxTextLength;
-    const loremipsum =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum leo euismod gravida accumsan. Nulla accumsan velit sed euismod blandit. Aliquam gravida ante sed eros.";
-    let content = loremipsum;
-    if (this.state.isTrimmed) {
-      content = `${loremipsum.substr(0, maxTextLength-3)}...`;
+    let content = this.props.content;
+    if (this.state.isTrimmed && content.length > maxTextLength) {
+      content = `${content.substr(0, maxTextLength - 3)}...`;
     }
-    return <p onClick={this.handleClick}>{content}</p>;
+    return (
+      <p onClick={this.handleClick} className="hero-description">
+        {content}
+      </p>
+    );
   }
 
   handleClick = () => {

@@ -1,18 +1,20 @@
 import React from "react";
-import HeroLi from "./HeroLi";
 
 export default class List extends React.Component {
+
+  static defaultProps = {
+    arrayOfObjects: [],
+    elemChoice: "ul",
+    getJSX: element => <li key={element.id}> {element.name}</li>
+  }
+
   render() {
-    const {
-      arrayOfObjects = [],
-      elemChoice = "ul",
-      renderClass = HeroLi
-    } = this.props;
-    const listItems = arrayOfObjects.map(element => <HeroLi elem={element} />);
+    const { arrayOfObjects, elemChoice, getJSX } = this.props;
+    const listItems = arrayOfObjects.map(getJSX);
 
     if (elemChoice === "div") {
-      return <div>{listItems}</div>;
+      return <div className="List">{listItems}</div>;
     }
-    return <ul>{listItems}</ul>;
+    return <ul className="List">{listItems}</ul>;
   }
 }
